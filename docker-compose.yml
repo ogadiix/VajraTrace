@@ -53,6 +53,8 @@ services:
     container_name: vajratrace-api
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql+asyncpg://vajra:vajra@postgres:5432/vajratrace
       NEO4J_URI: bolt://neo4j:7687
@@ -68,6 +70,9 @@ services:
         condition: service_healthy
     volumes:
       - ./apps/api:/app
+      - ./data/tags:/data/tags:ro
+      - ./data/ofac:/data/ofac:ro
+      - ./data/models:/app/data/models
     restart: unless-stopped
 
   web:

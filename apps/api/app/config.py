@@ -24,7 +24,11 @@ class Settings(BaseSettings):
     # API keys
     ETHERSCAN_API_KEY: str = ""
     TRONGRID_API_KEY: str = ""
-    ANTHROPIC_API_KEY: str = ""
+    ANTHROPIC_API_KEY: str = ""  # kept for backward compat; not used
+
+    # Groq (OpenAI-compatible LLM)
+    GROQ_API_KEY: str = ""
+    GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
 
 settings = Settings()

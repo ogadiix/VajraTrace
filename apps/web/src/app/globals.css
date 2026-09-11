@@ -2,12 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground: #F7F8FA;
-  --background: #12161C;
+@layer base {
+  :root {
+    --background: 220 22% 9%; /* #12161C */
+    --foreground: 220 14% 96%; /* #F7F8FA */
+    --card: 220 22% 11%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 22% 11%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 173 39% 40%; /* #3E8E85 trace-teal */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 218 18% 20%; /* #2A313C line */
+    --secondary-foreground: 220 14% 96%;
+    --muted: 218 18% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 218 18% 20%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 6 56% 41%; /* #A6392E signal-red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 18% 20%; /* #2A313C */
+    --input: 218 18% 20%;
+    --ring: 173 39% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 22% 9%; /* #12161C */
+    --foreground: 220 14% 96%; /* #F7F8FA */
+    --card: 220 22% 11%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 22% 11%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 173 39% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 218 18% 20%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 218 18% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 218 18% 20%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 6 56% 41%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 18% 20%;
+    --input: 218 18% 20%;
+    --ring: 173 39% 40%;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#12161C] text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar for dark console */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #12161C;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A313C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E8E85;
+}
+
+/* Golden burst animation for exchange node */
+@keyframes goldPulseBurst {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(212, 175, 55, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.95));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+  }
+}
+
+.gold-burst-active {
+  animation: goldPulseBurst 1s ease-out forwards;
+}
+
+/* Strict prefers-reduced-motion check */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

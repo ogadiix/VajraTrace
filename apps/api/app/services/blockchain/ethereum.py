@@ -68,7 +68,7 @@ async def _request_etherscan(
                 "Etherscan request (attempt %d/%d): action=%s address=%s",
                 attempt, _MAX_RETRIES, params.get("action"), params.get("address"),
             )
-            response = await client.get(_BASE_URL, params=params, timeout=20.0)
+            response = await client.get(_BASE_URL, params=params, timeout=45.0)
 
         if response.status_code == 429:
             wait = min(_BACKOFF_BASE * (2 ** (attempt - 1)), _BACKOFF_MAX)

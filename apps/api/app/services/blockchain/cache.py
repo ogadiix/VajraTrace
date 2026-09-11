@@ -113,13 +113,14 @@ async def _write_cache(
         expires_at=now + CACHE_TTL,
         http_status=http_status,
     )
-    stmt = stmt.on_conflict_on_constraint("uq_raw_cache").do_update(
+    stmt = stmt.on_conflict_do_update(
+        constraint="uq_raw_cache",
         set_={
             "response_body": stmt.excluded.response_body,
             "fetched_at": stmt.excluded.fetched_at,
             "expires_at": stmt.excluded.expires_at,
             "http_status": stmt.excluded.http_status,
-        }
+        },
     )
     await session.execute(stmt)
     await session.commit()

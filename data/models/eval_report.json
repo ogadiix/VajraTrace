@@ -1,0 +1,101 @@
+{
+    "metrics": {
+        "precision": 0.6881720430107527,
+        "recall": 0.6037735849056604,
+        "f1_score": 0.6432160804020101,
+        "average_precision_score": 0.6767720810482182
+    },
+    "confusion_matrix": [
+        [
+            10374,
+            174
+        ],
+        [
+            252,
+            384
+        ]
+    ],
+    "top_features": [
+        {
+            "feature": "size",
+            "importance": 0.7869552969932556
+        },
+        {
+            "feature": "Local_feature_59",
+            "importance": 0.6637107729911804
+        },
+        {
+            "feature": "Aggregate_feature_32",
+            "importance": 0.6318150162696838
+        },
+        {
+            "feature": "Local_feature_53",
+            "importance": 0.5822266340255737
+        },
+        {
+            "feature": "Local_feature_58",
+            "importance": 0.4303516745567322
+        },
+        {
+            "feature": "Local_feature_52",
+            "importance": 0.3656539022922516
+        },
+        {
+            "feature": "Local_feature_90",
+            "importance": 0.3479076027870178
+        },
+        {
+            "feature": "Aggregate_feature_68",
+            "importance": 0.3330036997795105
+        },
+        {
+            "feature": "Local_feature_76",
+            "importance": 0.3130340576171875
+        },
+        {
+            "feature": "Local_feature_2",
+            "importance": 0.30174118280410767
+        },
+        {
+            "feature": "Aggregate_feature_70",
+            "importance": 0.2976927161216736
+        },
+        {
+            "feature": "Local_feature_3",
+            "importance": 0.2891843914985657
+        },
+        {
+            "feature": "Aggregate_feature_45",
+            "importance": 0.27952417731285095
+        },
+        {
+            "feature": "Aggregate_feature_34",
+            "importance": 0.2570315897464752
+        },
+        {
+            "feature": "Local_feature_41",
+            "importance": 0.22720283269882202
+        },
+        {
+            "feature": "Local_feature_55",
+            "importance": 0.2220882773399353
+        },
+        {
+            "feature": "Local_feature_80",
+            "importance": 0.21940670907497406
+        },
+        {
+            "feature": "Local_feature_46",
+            "importance": 0.21607732772827148
+        },
+        {
+            "feature": "Aggregate_feature_9",
+            "importance": 0.20709845423698425
+        },
+        {
+            "feature": "Aggregate_feature_13",
+            "importance": 0.19983525574207306
+        }
+    ],
+    "training_time_seconds": 30.52081561088562
+}

@@ -41,3 +41,6 @@ data/models/*.joblib
 data/models/*.onnx
 data/Elliptic++ Dataset/
 data/ofac/sdn_advanced.xml
+data/reports/*.pdf
+apps/api/data/
+apps/data/
